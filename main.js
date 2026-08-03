@@ -360,7 +360,7 @@ function drawPriceChart(priceData) {
   // Grid Lines
   ctx.strokeStyle = '#222222';
   ctx.lineWidth = 1;
-  ctx.font = '11px MedievalSharp, serif';
+  ctx.font = '11px Aptos, Arial, sans-serif';
   ctx.fillStyle = '#888888';
 
   const gridSteps = 4;
