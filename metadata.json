@@ -1,0 +1,6 @@
+{
+  "name": "GenAI Finance App",
+  "description": "Financial research assistant analyzing stock ticker prices with LLM research notes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
