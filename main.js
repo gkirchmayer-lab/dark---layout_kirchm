@@ -338,7 +338,7 @@ function drawPriceChart(priceData) {
   const height = rect.height;
 
   // Clear background
-  ctx.fillStyle = '#0a0a0a';
+  ctx.fillStyle = '#ffffff';
   ctx.fillRect(0, 0, width, height);
 
   const padding = { top: 25, right: 30, bottom: 30, left: 50 };
@@ -358,10 +358,10 @@ function drawPriceChart(priceData) {
   });
 
   // Grid Lines
-  ctx.strokeStyle = '#222222';
+  ctx.strokeStyle = '#e2e8f0';
   ctx.lineWidth = 1;
   ctx.font = '11px Aptos, Arial, sans-serif';
-  ctx.fillStyle = '#888888';
+  ctx.fillStyle = '#64748b';
 
   const gridSteps = 4;
   for (let i = 0; i <= gridSteps; i++) {
@@ -382,8 +382,8 @@ function drawPriceChart(priceData) {
 
   // Area Fill under Price Line
   const gradient = ctx.createLinearGradient(0, padding.top, 0, height - padding.bottom);
-  gradient.addColorStop(0, 'rgba(88, 166, 255, 0.35)');
-  gradient.addColorStop(1, 'rgba(88, 166, 255, 0.00)');
+  gradient.addColorStop(0, 'rgba(37, 99, 235, 0.20)');
+  gradient.addColorStop(1, 'rgba(37, 99, 235, 0.00)');
 
   ctx.beginPath();
   ctx.moveTo(getX(0), getY(closes[0]));
@@ -398,7 +398,7 @@ function drawPriceChart(priceData) {
 
   // Draw Price Line
   ctx.beginPath();
-  ctx.strokeStyle = '#58a6ff';
+  ctx.strokeStyle = '#2563eb';
   ctx.lineWidth = 2.5;
   for (let i = 0; i < closes.length; i++) {
     const x = getX(i);
@@ -408,9 +408,9 @@ function drawPriceChart(priceData) {
   }
   ctx.stroke();
 
-  // Draw 20-SMA Line (Gold)
+  // Draw 20-SMA Line (Amber Gold)
   ctx.beginPath();
-  ctx.strokeStyle = '#d4af37';
+  ctx.strokeStyle = '#d97706';
   ctx.lineWidth = 1.5;
   let startedSma = false;
   for (let i = 0; i < sma20.length; i++) {
@@ -428,7 +428,7 @@ function drawPriceChart(priceData) {
   ctx.stroke();
 
   // Date Labels (X-axis)
-  ctx.fillStyle = '#888888';
+  ctx.fillStyle = '#64748b';
   const labelIndices = [0, Math.floor(priceData.length / 2), priceData.length - 1];
   labelIndices.forEach((idx) => {
     const d = priceData[idx];
@@ -447,7 +447,7 @@ function drawPriceChart(priceData) {
   ctx.arc(lastX, lastY, 5, 0, Math.PI * 2);
   ctx.fillStyle = '#ffffff';
   ctx.fill();
-  ctx.strokeStyle = '#58a6ff';
+  ctx.strokeStyle = '#2563eb';
   ctx.lineWidth = 2;
   ctx.stroke();
 }

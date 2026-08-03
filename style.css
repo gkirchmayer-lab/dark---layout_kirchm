@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --ink: #ffffff;
-  --paper: #000000;
-  --panel-bg: #0d0d0d;
-  --input-bg: #161616;
-  --line: #2a2a2a;
-  --accent: #58a6ff;
-  --accent-gold: #d4af37;
-  --error: #ff7b72;
-  --muted: #a0a0a0;
-  --green: #3fb950;
-  --red: #f85149;
+  --ink: #111827;
+  --paper: #ffffff;
+  --panel-bg: #f9fafb;
+  --input-bg: #ffffff;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+  --accent-gold: #d97706;
+  --error: #dc2626;
+  --muted: #6b7280;
+  --green: #16a34a;
+  --red: #dc2626;
   --font-sans: 'Aptos', Arial, 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -30,7 +30,7 @@ body {
 
 .app-header {
   padding: 2rem 1.5rem 1.25rem;
-  border-bottom: 2px solid var(--line);
+  border-bottom: 1px solid var(--line);
   background: var(--paper);
   text-align: center;
 }
@@ -66,19 +66,19 @@ body {
   padding: 1.5rem;
   background: var(--panel-bg);
   color: var(--ink);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 /* Onboarding Demo Banner */
 .demo-banner {
-  border: 1px solid var(--accent);
-  background: linear-gradient(180deg, #18140a 0%, #0d0d0d 100%);
+  border: 1px solid #bfdbfe;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
 }
 
 .banner-content h2 {
   margin: 0 0 0.5rem;
   font-size: 1.3rem;
-  color: var(--accent);
+  color: #1e40af;
   font-family: var(--font-sans);
   font-weight: 700;
 }
@@ -86,7 +86,7 @@ body {
 .banner-content p {
   margin: 0 0 1rem;
   font-size: 0.95rem;
-  color: #dddddd;
+  color: #374151;
 }
 
 .demo-actions {
@@ -109,13 +109,14 @@ body {
   font-size: 0.85rem;
   color: var(--accent);
   margin-right: 0.25rem;
+  font-weight: 600;
 }
 
 .ticker-chip {
   padding: 0.35rem 0.75rem;
-  background: #1c1c1c;
-  color: #ffffff;
-  border: 1px solid #333333;
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
   border-radius: 4px;
   font-family: var(--font-sans);
   font-size: 0.85rem;
@@ -127,6 +128,7 @@ body {
 .ticker-chip:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: #f0f6ff;
   transform: translateY(-1px);
 }
 
@@ -152,12 +154,12 @@ label {
 
 input {
   padding: 0.7rem;
-  border: 1px solid var(--line);
+  border: 1px solid #d1d5db;
   border-radius: 4px;
   font-size: 1rem;
   font-family: var(--font-sans);
   background: var(--input-bg);
-  color: #ffffff;
+  color: #111827;
   width: 100%;
 }
 
@@ -167,7 +169,7 @@ input:focus {
 }
 
 input::placeholder {
-  color: #666666;
+  color: #9ca3af;
   font-family: var(--font-sans);
 }
 
@@ -175,7 +177,7 @@ input::placeholder {
 .api-keys-accordion summary {
   cursor: pointer;
   font-size: 0.95rem;
-  color: #cccccc;
+  color: #4b5563;
   padding: 0.4rem 0;
   user-select: none;
 }
@@ -187,8 +189,8 @@ input::placeholder {
 .badge-optional {
   font-size: 0.7rem;
   padding: 0.15rem 0.4rem;
-  background: #222222;
-  border: 1px solid #444444;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
   border-radius: 3px;
   color: var(--muted);
   margin-left: 0.5rem;
@@ -199,7 +201,7 @@ input::placeholder {
   display: grid;
   gap: 0.5rem;
   padding: 0.75rem;
-  background: #111111;
+  background: #f3f4f6;
   border: 1px solid var(--line);
   border-radius: 4px;
 }
@@ -212,7 +214,7 @@ input::placeholder {
 }
 
 .field-hint a {
-  color: var(--accent-blue);
+  color: var(--accent);
 }
 
 /* Form Buttons */
@@ -235,35 +237,35 @@ button {
 
 .btn-primary {
   background: var(--accent);
-  color: #000000;
+  color: #ffffff;
   border: 1px solid var(--accent);
 }
 
 .btn-primary:hover {
-  background: #70b4ff;
-  box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+  background: #1d4ed8;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.25);
 }
 
 .btn-secondary {
-  background: #1f1f1f;
-  color: #ffffff;
-  border: 1px solid #444444;
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
 }
 
 .btn-secondary:hover {
-  background: #333333;
-  border-color: #666666;
+  background: #f3f4f6;
+  border-color: #9ca3af;
 }
 
 .btn-demo {
-  background: #238636;
+  background: #16a34a;
   color: #ffffff;
-  border: 1px solid #2ea043;
+  border: 1px solid #16a34a;
 }
 
 .btn-demo:hover {
-  background: #2ea043;
-  box-shadow: 0 0 8px rgba(46, 160, 67, 0.4);
+  background: #15803d;
+  box-shadow: 0 0 8px rgba(22, 163, 74, 0.25);
 }
 
 /* Results Section */
@@ -355,15 +357,15 @@ button {
 }
 
 .badge-demo {
-  background: #281d00;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #f59e0b;
 }
 
 .badge-live {
-  background: #0d2818;
-  color: var(--green);
-  border: 1px solid var(--green);
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #22c55e;
 }
 
 .price-display {
@@ -376,6 +378,7 @@ button {
 .price-val {
   font-size: 1.8rem;
   font-weight: bold;
+  color: var(--ink);
 }
 
 .price-change {
@@ -401,7 +404,7 @@ button {
 }
 
 .stat-card {
-  background: #141414;
+  background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 0.75rem;
@@ -413,6 +416,7 @@ button {
   font-size: 0.75rem;
   color: var(--muted);
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .stat-value {
@@ -427,7 +431,7 @@ button {
 
 /* Interactive Chart Container */
 .chart-container {
-  background: #0a0a0a;
+  background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 1rem;
@@ -446,7 +450,8 @@ button {
 .chart-header h3 {
   margin: 0;
   font-size: 1rem;
-  color: var(--accent);
+  color: var(--ink);
+  font-weight: 600;
 }
 
 .chart-subtitle {
@@ -461,17 +466,17 @@ button {
 
 /* Research Scroll */
 .research-scroll {
-  background: #111111;
-  border: 1px solid var(--accent);
+  background: #ffffff;
+  border: 1px solid #bfdbfe;
   border-radius: 6px;
   padding: 1.25rem;
   position: relative;
-  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
 }
 
 .scroll-header {
   margin-bottom: 1rem;
-  border-bottom: 1px dashed var(--accent);
+  border-bottom: 1px dashed #bfdbfe;
   padding-bottom: 0.5rem;
 }
 
@@ -480,7 +485,7 @@ button {
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--accent);
+  color: #1e40af;
 }
 
 .scroll-tagline {
@@ -492,7 +497,7 @@ button {
 .scroll-body {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #eeeeee;
+  color: #1f2937;
 }
 
 .scroll-body p {
@@ -507,5 +512,6 @@ button {
   color: var(--muted);
   text-align: center;
 }
+
 
 
