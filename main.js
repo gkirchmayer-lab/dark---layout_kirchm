@@ -148,8 +148,8 @@ async function getResearchNote(ticker, priceData, apiKey) {
       max_tokens: 2000,
       reasoning: { enabled: false },
       messages: [
-        { role: 'system', content: 'You are a financial research scholar in a medieval market codex. Be concise, insightful, and professional with subtle classical flair.' },
-        { role: 'user', content: `${summary}\n\nWrite a 2-paragraph financial research scroll for ${ticker} analyzing its recent market momentum, support/resistance levels, and outlook.` }
+        { role: 'system', content: 'You are an expert financial analyst. Provide clear HTML output with <p> tags for analysis paragraphs and a <ul> list with 4 <li> items under a <h4>Key Takeaways for Investors</h4> heading.' },
+        { role: 'user', content: `${summary}\n\nWrite a financial research note for ${ticker} analyzing its recent market momentum, support/resistance levels, and outlook. End with a <h4>Key Takeaways for Investors</h4> section containing 4 bullet points highlighting actionable insights for investors.` }
       ]
     })
   });
@@ -236,14 +236,25 @@ function generateDemoResearchNote(ticker, priceData) {
   const lows = priceData.map(p => p.low);
   const maxHigh = Math.max(...highs).toFixed(2);
   const minLow = Math.min(...lows).toFixed(2);
+  const avgVolume = (priceData.reduce((acc, p) => acc + p.volume, 0) / priceData.length / 1000000).toFixed(1);
 
   const direction = pctChange >= 0 ? 'bullish momentum' : 'corrective pullback';
   const verb = pctChange >= 0 ? 'ascended' : 'retreated';
 
   return `
-    <p><strong>I. Market Momentum & Price Action:</strong> Over the observed 90-day cycle, <strong>${ticker}</strong> has ${verb} by <strong>${pctChange.toFixed(1)}%</strong>, moving from an opening valuation of $${first.close.toFixed(2)} to a latest close of $${latest.close.toFixed(2)}. The stock established a high mark of $${maxHigh} against a low floor of $${minLow}, demonstrating resilient support amidst broader market fluctuations.</p>
+    <p><strong>Market Momentum & Price Action:</strong> Over the observed 90-day cycle, <strong>${ticker}</strong> has ${verb} by <strong>${pctChange.toFixed(1)}%</strong>, moving from an opening valuation of $${first.close.toFixed(2)} to a latest close of $${latest.close.toFixed(2)}. The stock established a high mark of $${maxHigh} against a low floor of $${minLow}, demonstrating resilient support amidst broader market fluctuations.</p>
     
-    <p><strong>II. Strategic Technical Outlook:</strong> Moving average indicators signal ${direction}. Traders and institutional scholars should monitor key resistance near $${maxHigh}. Volume trends reflect steady accumulation on dips, suggesting sustained long-term conviction across major trading houses.</p>
+    <p><strong>Strategic Technical Outlook:</strong> Moving average indicators signal ${direction}. Traders and institutional investors should monitor key resistance near $${maxHigh}. Volume trends reflect steady accumulation on dips, suggesting sustained long-term conviction across major trading houses.</p>
+
+    <div class="takeaways-box">
+      <h4>Key Takeaways for Investors</h4>
+      <ul class="takeaways-list">
+        <li><strong>Trend Trendline & Momentum:</strong> 90-day trajectory exhibits a net shift of <strong>${pctChange >= 0 ? '+' : ''}${pctChange.toFixed(1)}%</strong>, remaining aligned with key 20-day Simple Moving Average trends.</li>
+        <li><strong>Critical Price Boundaries:</strong> Immediate support is anchored near <strong>$${minLow}</strong>, while major resistance is established at <strong>$${maxHigh}</strong>.</li>
+        <li><strong>Volume & Liquidity Profile:</strong> Average daily trading volume of <strong>${avgVolume}M shares</strong> indicates robust institutional liquidity and healthy order depth.</li>
+        <li><strong>Actionable Strategy:</strong> Investors looking to enter or rebalance should consider scaling in during consolidation near support levels while monitoring upcoming earnings and sector catalysts.</li>
+      </ul>
+    </div>
   `;
 }
 

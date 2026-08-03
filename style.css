@@ -504,6 +504,42 @@ button {
   margin: 0 0 0.8rem;
 }
 
+.scroll-body h4, .takeaways-box h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e40af;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.3rem;
+}
+
+.takeaways-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+}
+
+.scroll-body ul, .takeaways-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.scroll-body li, .takeaways-list li {
+  color: #374151;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.scroll-body li strong, .takeaways-list li strong {
+  color: #111827;
+}
+
 .app-footer {
   max-width: 800px;
   margin: 0 auto;
